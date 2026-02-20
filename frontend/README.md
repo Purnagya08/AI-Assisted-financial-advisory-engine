@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# 🧠 AI Assisted Financial Advisory Engine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Overview
 
-## Available Scripts
+The **AI Assisted Financial Advisory Engine** is a decision-support platform designed to help Micro, Small and Medium Enterprises (MSMEs) evaluate their financial health and loan readiness using real operational cashflow data instead of traditional credit-only metrics.
 
-In the project directory, you can run:
+Small businesses are frequently denied loans because legacy credit systems rely heavily on bureau scores, collateral, and historical borrowing records. Many MSMEs lack these formal signals but operate with active digital payments, GST transactions, and ongoing business revenue.
 
-### `npm start`
+This system analyzes real financial inputs and generates a transparent, explainable advisory report that helps businesses understand:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Their financial stability
+* Their borrowing risk level
+* A sustainable loan amount
+* Practical steps to improve eligibility
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The platform acts as a **pre-loan financial intelligence layer**, not a banking replacement.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 Problem Statement
 
-### `npm run build`
+Traditional lending models often fail MSMEs because:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Thin or missing credit history leads to automatic rejection
+* Seasonal revenue patterns are misclassified as instability
+* Cash-based or digital-first businesses lack structured balance sheets
+* Borrowers rarely receive explanations or sustainability analysis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This creates a credit-access gap and increases dependence on high-interest informal lending.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 💡 Solution
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The AI Assisted Financial Advisory Engine combines deterministic financial modeling with AI-generated reasoning.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After entering business financial data, the system:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Calculates key financial ratios
+2. Computes a rule-based risk score
+3. Assigns a loan eligibility category
+4. Estimates a safe borrowing amount
+5. Generates a clear explanation of financial strengths and risks
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This ensures both **numerical reliability** and **human-readable transparency**.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 👥 Target Users
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* MSME business owners
+* Startup founders seeking working capital
+* Fintech lenders and NBFCs
+* Financial advisory platforms
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⚙️ System Workflow
 
-### Analyzing the Bundle Size
+### 🔹 Inputs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Monthly revenue
+* Operating expenses
+* Existing loans and debt
+* Cashflow volatility
+* Transaction or GST signals (mocked for MVP)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🔹 Financial Engine Computes
 
-### Advanced Configuration
+* Debt-to-income ratio
+* Revenue stability score
+* Liquidity buffer estimate
+* Expense burden ratio
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### 🔹 Outputs Generated
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Risk Score (0–100)
+* Loan Eligibility Tier
+* Recommended Loan Amount
+* Suggested Repayment Duration
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 🔹 Explainability Layer
+
+An AI reasoning module translates financial results into plain-language advisory insights.
+
+Example output:
+
+> Your financial risk is moderate due to high revenue fluctuation and a 48% debt burden.
+> Stabilizing revenue for the next quarter or reducing operating expenses could improve loan eligibility.
+
+---
+
+## 📊 Dashboard Features
+
+* Risk Gauge Visualization
+* Financial Health Indicators
+* Cashflow Volatility Graph
+* AI Advisory Panel
+* Loan Sustainability Recommendation
+* Scenario Simulator (example: revenue growth test)
+
+---
+
+## 🏗️ Technology Stack
+
+### Frontend
+
+* React for interactive financial input and dashboard visualization
+
+### Backend
+
+* Node.js + Express for ratio computation and scoring logic
+
+### AI Layer
+
+* OpenAI API for structured financial explanation generation
+
+---
+
+## 🧩 Design Philosophy
+
+The system separates:
+
+* Deterministic financial scoring logic (for correctness)
+* AI explanation generation (for interpretability)
+
+This prevents unreliable AI-generated financial decisions while ensuring transparent reasoning.
+
+---
+
+## 🚀 MVP Development Plan
+
+### Phase 1
+
+* Financial input interface
+* Dashboard layout
+* Static visualizations
+
+### Phase 2
+
+* Risk scoring implementation
+* AI explanation integration
+* Scenario simulation module
+* Deployment on cloud platform
+
+---
+
+## 📈 Future Scalability
+
+* Bank underwriting API integration
+* GST and accounting software connectivity
+* Real-time transaction analysis
+* AI-based credit sustainability monitoring
+* MSME-focused alternative credit intelligence ecosystem
+
+---
+
+## 🇮🇳 Expected Impact
+
+* Improves financial decision clarity for MSMEs
+* Encourages sustainable borrowing behavior
+* Reduces loan default risks
+* Enhances transparency in lending advisory
+
+---
+
+## ⚠️ Disclaimer
+
+This platform is a financial advisory and decision-support system.
+It does not replace official bank underwriting, regulatory credit scoring, or licensed financial consultation.
+
+---
+
+## 🏁 Team
+
+**HackShastra**
+
+Smarter Decisions. Transparent Advisory. Sustainable Credit.
