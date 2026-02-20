@@ -170,10 +170,12 @@ const confidenceScore = Math.max(
     const explainData = await callAIExplain(riskData);
 
     setResult({
-      ...riskData,
-      explanation: explainData.explanation,
-      recommendedLoan: riskData.surplus * 6
-    });
+  ...riskData,
+  explanation: explainData.explanation,
+  strategy: explainData.strategy,
+  underwritingMemo: explainData.underwritingMemo, // ⭐ ADD THIS
+  recommendedLoan: riskData.surplus * 6
+});
 
     setScenarioResult(null);
     setLoading(false);
@@ -400,6 +402,35 @@ const confidenceScore = Math.max(
 
                     </div>
 
+                    {/* 🔥 RISK SIGNAL CHIPS */}
+<div className="flex flex-wrap justify-center gap-3 mt-6">
+
+  {result.debtRatio > 2 && (
+    <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">
+      High Leverage Exposure
+    </span>
+  )}
+
+  {formData.volatility === "high" && (
+    <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">
+      Revenue Volatility Risk
+    </span>
+  )}
+
+  {result.surplus > 0 && (
+    <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+      Positive Cashflow
+    </span>
+  )}
+
+  {result.surplus <= 0 && (
+    <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">
+      Negative Cashflow
+    </span>
+  )}
+
+</div>
+
                     <p className="text-center mt-2">
                       Tier: {result.tier} | Recommended Loan: ₹{result.recommendedLoan}
                     </p>
@@ -471,10 +502,35 @@ const confidenceScore = Math.max(
           <p className="text-sm">
             Max Loan Offer: ₹{bank.maxLoan.toLocaleString()}
           </p>
+          <div className="mt-3 text-xs text-gray-500">
+  <p className="font-medium text-gray-600">Why This Bank?</p>
+  <p>
+    Risk alignment score of {bank.matchScore}% based on underwriting tolerance 
+    and borrower credit profile compatibility.
+  </p>
+</div>
         </div>
       ))}
   </div>
 </div>
+
+{result.underwritingMemo && (
+  <div className="mt-8 bg-gray-900 text-white p-6 rounded-xl shadow">
+    <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
+    AI Decision Intelligence Layer
+  </p>
+
+    <h3 className="text-xl font-semibold mb-4">
+      Bank Underwriting Memo (Internal Credit Note)
+    </h3>
+
+    <div className="whitespace-pre-line text-gray-300 text-sm">
+      {result.underwritingMemo}
+    </div>
+  </div>
+)}
+
+
 
                     <div className="text-center mt-6">
                       <button onClick={downloadReport} className="px-6 py-3 bg-green-600 text-white rounded-xl">
