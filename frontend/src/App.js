@@ -109,7 +109,7 @@ const confidenceScore = Math.max(
   const downloadReport = async () => {
     const lender = getLenderInsights(result);
 
-    const response = await fetch("http://localhost:8000/api/report/generate", {
+    const response = await fetch("https://ai-assisted-financial-advisory-engine-1.onrender.com/api/report/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -133,7 +133,7 @@ const confidenceScore = Math.max(
   };
 
   const callRiskEngine = async (payload) => {
-    const response = await fetch("http://localhost:8000/api/risk/calculate", {
+    const response = await fetch("https://ai-assisted-financial-advisory-engine-1.onrender.com/api/risk/calculate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -142,7 +142,7 @@ const confidenceScore = Math.max(
   };
 
   const callAIExplain = async (data) => {
-    const response = await fetch("http://localhost:8000/api/explain/generate", {
+    const response = await fetch("https://ai-assisted-financial-advisory-engine-1.onrender.com/api/explain/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
